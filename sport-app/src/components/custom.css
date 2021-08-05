@@ -1,0 +1,11 @@
+.border-radius{
+    border-radius: 20px;
+}
+/* .forms-width{
+    width: 600px;
+} */
+.form-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
