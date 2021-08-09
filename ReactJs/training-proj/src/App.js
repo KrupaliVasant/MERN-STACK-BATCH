@@ -1,11 +1,18 @@
 import './App.css';
-import Home from './components/Home';
-import AboutUs from './components/AboutUs';
-import ContactUs from './components/ContactUs';
+// import Home from './components/Home';
+// import AboutUs from './components/AboutUs';
+// import ContactUs from './components/ContactUs';
 import PropTypes from 'prop-types';
-import LifeCycle from './components/LifeCycle';
-import DemoUseEffect from './components/DemoUseEffect';
-import DemoForm from './components/DemoForm';
+import DemoArray from './components/DemoArray';
+import UserList from './components/UserList';
+import UserAdd from './components/UserAdd';
+import UserUpdate from './components/UserUpdate';
+import UserDelete from './components/UserDelete';
+// import LifeCycle from './components/LifeCycle';
+// import DemoUseEffect from './components/DemoUseEffect';
+// import DemoForm from './components/DemoForm';
+// import DemoUncontrolledForm from './components/DemoUncontrolledForm';
+// import DemoUseRef from './components/DemoUseRef';
 
 function App(props) {
   // let greet = "Welcome Back";
@@ -18,10 +25,15 @@ function App(props) {
       <AboutUs greet={greet} org="Brillio" />
       <ContactUs address={props.mobile} /> */}
       {/* <LifeCycle/> */}
-
       {/* <DemoUseEffect /> */}
-
-      <DemoForm />
+      {/* <DemoForm /> */}
+      {/* <DemoUncontrolledForm /> */}
+      {/* <DemoUseRef/> */}
+      {/* <DemoArray/> */}
+      {/* <UserList /> */}
+      {/* <UserAdd /> */}
+      {/* <UserUpdate /> */}
+      {/* <UserDelete /> */}
     </div>
   );
 }

@@ -1,57 +1,73 @@
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import axios from 'axios';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import './custom.css'
 
 function Registration() {
+
+    const [name, setName] = useState('');
+    const [userName, setUserName] = useState('');
+    const [email, setEmail] = useState('');
+
+    const headers = {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+    }
+
+    const handleChange = (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const username = document.getElementById('user-name').value;
+        const email = document.getElementById('email').value;
+        setName(name);
+        setUserName(username);
+        setEmail(email);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const user = {
+            name,
+            userName,
+            email
+        };
+        axios.post(`https://jsonplaceholder.typicode.com/users`, user, { headers: headers })
+            .then((res) => {
+                console.log(res);
+                alert(`Add player successfully 
+            Name:${user.name}, User Name:${user.userName}, Email: ${user.email}`);
+            })
+    }
+
     return (
         <>
-            <div className="form-center">
-                <div className="p-4 bg-light text-dark border-radius shadow-lg">
-                    <Form className="text-left">
-                        <h3 className="text-center">Registration Form</h3>
-                        <Form.Group as={Row} className="mb-3" controlId="formBasicEmail">
-                            <Form.Label column sm="5">First Name</Form.Label>
-                            <Col sm="7">
-                                <Form.Control type="text" placeholder="Enter first name" />
-                            </Col>
-                        </Form.Group>
-
-                        <Form.Group as={Row} className="mb-3" controlId="formBasicPassword">
-                            <Form.Label column sm="5">Last Name</Form.Label>
-                            <Col sm="7">
-                                <Form.Control type="text" placeholder="Enter last name" />
-                            </Col>
-                        </Form.Group>
-
-                        <Form.Group as={Row} className="mb-3" controlId="formBasicPassword">
-                            <Form.Label column sm="5">Email Address</Form.Label>
-                            <Col sm="7">
-                                <Form.Control type="email" placeholder="Enter email address" />
-                            </Col>
-                        </Form.Group>
-
-                        <Form.Group as={Row} className="mb-3" controlId="formBasicPassword">
-                            <Form.Label column="5">Password</Form.Label>
-                            <Col sm="7">
-                                <Form.Control type="password" placeholder="Enter password" />
-                            </Col>
-                        </Form.Group>
-
-                        <Form.Group as={Row} className="mb-3" controlId="formBasicPassword">
-                            <Form.Label column="5">Confirm Password</Form.Label>
-                            <Col sm="7">
-                                <Form.Control type="password" placeholder="Enter confirm password" />
-                            </Col>
-                        </Form.Group>
-                        <div className="text-center">
-                            <Button variant="primary" type="submit">
-                                Submit
-                            </Button>
-                        </div>
-                    </Form>
-
+            <div className="container mt-contain">
+                <div className="form-center">
+                    <div className="p-4 px-5 bg-green text-dark border-radius shadow-lg">
+                        <form onSubmit={handleSubmit}>
+                            <h3 className="text-color text-center mb-5">SignUp Form</h3>
+                            <div className="input-group mb-3">
+                                <label htmlFor="name" className="input-group-text">Name:</label>
+                                <input type="text" className="form-control" name="name" id="name" onChange={handleChange} />
+                            </div>
+                            <div className="input-group mb-3">
+                                <label htmlFor="user-name" className="input-group-text">User Name:</label>
+                                <input type="text" className="form-control" name="user-name" id="user-name" onChange={handleChange} />
+                            </div>
+                            <div className="input-group mb-5">
+                                <label htmlFor="email" className="input-group-text">Email:</label>
+                                <input type="email" className="form-control" name="email" id="email" onChange={handleChange} />
+                            </div>
+                            <div className="d-grid gap-2 text-center">
+                                <button type="submit" className="btn btn-success">Register</button>
+                            </div>
+                            <div className="text-center mb-3 mt-4">
+                                <span className="text-white me-3">Already a member?</span>
+                                <NavLink to="/login" exact className="text-color text-decoration-none" activeClassName="text-success">LogIn</NavLink>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </>

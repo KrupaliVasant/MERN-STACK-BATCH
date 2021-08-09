@@ -1,28 +1,41 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
 function NavBar() {
+    const params = useParams();
+    console.log(params.id);
+
+    const history = useHistory()
+
+    const callLogin=()=>{
+        history.push('/login');
+    }
+    const callRegister=()=>{
+        history.push('/registration');
+    }
+
     return (
         <>
-            <div class="container">
-                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-                    <NavLink to="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                        {/* <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg> */}
-                    </NavLink>
-
-                    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                        <li><NavLink className="nav-link" to='/'>Home</NavLink></li>
-                        <li><NavLink className="nav-link" to='/playerlist'>Player List</NavLink></li>
-                    </ul>
-
-                    <div class="col-md-3 text-end">
-                        <ul className="nav">
-                            <li><NavLink className="btn btn-outline-primary me-2" to='/login'>Login</NavLink></li>
-                            <li><NavLink className="btn btn-primary" to='/registration'>Registration</NavLink></li>
+            <nav class="navbar navbar-expand-lg navbar-orange bg-orange fixed-top shadow-lg">
+                <div class="container">
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li><NavLink className="nav-link" exact to='/' activeClassName="text-white">Home</NavLink></li>
+                            <li><NavLink className="nav-link" exact to='/playerlist' activeClassName="text-white">Player List</NavLink></li>
+                            <li><NavLink className="nav-link" exact to='/playerlistbyid' activeClassName="text-white">Search</NavLink></li>
                         </ul>
+
+                        <div class="text-end">
+                            <ul className="nav">
+                            {/* <li><button className="btn btn-outline-success me-2" activeClassName="btn btn-success" onClick={callLogin}>Login</button></li>
+                                <li><button className="btn btn-outline-success" activeClassName="btn btn-success" onClick={callRegister}>Registration</button></li> */}
+                                <li><NavLink className="btn btn-outline-light me-3" to='/login' activeClassName="btn btn-light text-dark">LogIn</NavLink></li>
+                            <li><NavLink className="btn btn-outline-light me-3" exact to='/registration' activeClassName="btn btn-light text-dark">SignUp</NavLink></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-
+            </nav>
         </>
     )
 }
