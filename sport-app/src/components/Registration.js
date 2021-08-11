@@ -44,9 +44,9 @@ function Registration() {
         <>
             <div className="container mt-contain">
                 <div className="form-center">
-                    <div className="p-4 px-5 bg-green text-dark border-radius shadow-lg">
+                    <div className="p-4 px-5 bg-green text-dark border-radius shadow-lg animate__animated animate__zoomIn">
                         <form onSubmit={handleSubmit}>
-                            <h3 className="text-color text-center mb-5">SignUp Form</h3>
+                            <h3 className="text-color text-center mb-5 animate__animated animate__flash">SignUp Form</h3>
                             <div className="input-group mb-3">
                                 <label htmlFor="name" className="input-group-text">Name:</label>
                                 <input type="text" className="form-control" name="name" id="name" onChange={handleChange} />
@@ -60,11 +60,11 @@ function Registration() {
                                 <input type="email" className="form-control" name="email" id="email" onChange={handleChange} />
                             </div>
                             <div className="d-grid gap-2 text-center">
-                                <button type="submit" className="btn btn-success">Register</button>
+                                <button type="submit" className="btn btn-success hvr-float-shadow">Register</button>
                             </div>
                             <div className="text-center mb-3 mt-4">
                                 <span className="text-white me-3">Already a member?</span>
-                                <NavLink to="/login" exact className="text-color text-decoration-none" activeClassName="text-success">LogIn</NavLink>
+                                <NavLink to="/login" exact className="text-color text-decoration-none hvr-forward" activeClassName="text-success">LogIn</NavLink>
                             </div>
                         </form>
                     </div>

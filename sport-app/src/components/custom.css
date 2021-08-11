@@ -37,3 +37,8 @@
 .text-color{
     color: #a33327;
 }
+.form-control:focus{
+    border-color: none;
+    box-shadow: none !important;
+    border-bottom: 1px solid red;
+}

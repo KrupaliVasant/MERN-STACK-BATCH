@@ -3,11 +3,12 @@ import './App.css';
 // import AboutUs from './components/AboutUs';
 // import ContactUs from './components/ContactUs';
 import PropTypes from 'prop-types';
-import DemoArray from './components/DemoArray';
-import UserList from './components/UserList';
-import UserAdd from './components/UserAdd';
-import UserUpdate from './components/UserUpdate';
-import UserDelete from './components/UserDelete';
+// import DemoArray from './components/DemoArray';
+// import UserList from './components/UserList';
+// import UserAdd from './components/UserAdd';
+// import UserUpdate from './components/UserUpdate';
+// import UserDelete from './components/UserDelete';
+// import DemoContext from './components/DemoContext';
 // import LifeCycle from './components/LifeCycle';
 // import DemoUseEffect from './components/DemoUseEffect';
 // import DemoForm from './components/DemoForm';
@@ -34,6 +35,7 @@ function App(props) {
       {/* <UserAdd /> */}
       {/* <UserUpdate /> */}
       {/* <UserDelete /> */}
+      {/* <DemoContext /> */}
     </div>
   );
 }

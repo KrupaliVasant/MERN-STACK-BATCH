@@ -69,9 +69,9 @@ function PlayerUpdate(props) {
         <>
             <div className="container mt-contain">
                 <div className="form-center">
-                    <div className="p-4 bg-green text-dark border-radius shadow-lg">
+                    <div className="p-4 bg-green text-dark border-radius shadow-lg animate__animated animate__zoomIn">
                         <form onSubmit={handleSubmit}>
-                            <h1 className="text-center mb-4 text-color">Update Player</h1>
+                            <h1 className="text-center mb-4 text-color animate__animated animate__flash">Update Player</h1>
                             <div className="input-group mb-3">
                                 <label htmlFor="id" className="input-group-text">Id:</label>
                                 <input type="text" className="form-control" name="id" id="id" value={id} onChange={handleChange} />
@@ -90,7 +90,7 @@ function PlayerUpdate(props) {
                                 {/* <input type="email" name="email" id="email"  onChange={(e)=>setEmail(e.target.value)} /> */}
                             </div>
                             <div className="d-grid gap-2 text-center mt-4">
-                                <button type="submit" className="btn btn-success">Update Player</button>
+                                <button type="submit" className="btn btn-success hvr-float-shadow">Update Player</button>
                             </div>
                         </form>
                     </div>

@@ -32,9 +32,9 @@ function Player() {
     return (
         <>
             <div className="container mt-contain">
-                <div className="forms-width p-3 bg-green text-dark border-radius shadow-lg">
+                <div className="forms-width p-3 bg-green text-dark border-radius shadow-lg animate__animated animate__zoomIn">
                     <div className='form-center'>
-                        <h3 className="text-color mb-4">Player Detail</h3>
+                        <h3 className="text-color mb-4 animate__animated animate__flash">Player Detail</h3>
                         <form onSubmit={loadData}>
                             <div className="input-group mb-3">
                                 <span className="input-group-text">Id: </span>
@@ -44,7 +44,7 @@ function Player() {
                         </form>
                         {
                             isClick ?
-                        <div className="card text-white bg-dark mt-5 mb-3 shadow">
+                        <div className="card text-white bg-dark mt-5 mb-3 shadow animate__animated animate__fadeInUp hvr-curl-top-right">
                             <div className="card-header">
                                 <span className="fw-bold me-3">Player Id:</span> 
                                 <span className="fw-light">{id}</span>

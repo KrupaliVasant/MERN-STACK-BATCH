@@ -10,6 +10,7 @@ import UserList from './components/UserList';
 import Welcome from './components/Welcome';
 import UseHistory from './components/UseHistory';
 import UserId from './components/UserId';
+import DemoContext from './components/DemoContext';
 
 const routing = (
   <Router>
@@ -22,6 +23,7 @@ const routing = (
       <li><Link to="/history">Use History</Link></li>
       <li><Link to="/userlist">User List</Link></li>
       <li><Link to="/userid">User By Id</Link></li>
+      <li><Link to="/context">Demo Context</Link></li>
       <li><NavLink to="/about" exact activeStyle={{ color: 'red' }}>About Us</NavLink></li>
 
       <Switch>
@@ -32,6 +34,7 @@ const routing = (
         <Route path="/userlist/:id" component={UserList}></Route>  {/* pass id in url in welcome component  */}
         <Route path="/history" component={UseHistory}></Route>
         <Route path="/userid/:id" component={UserId}></Route>
+        <Route path="/context" component={DemoContext}></Route>
       </Switch>
     </div>
   </Router>

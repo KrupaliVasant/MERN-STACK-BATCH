@@ -40,10 +40,10 @@ function PlayerDelete() {
     return (
         <>
             <div className="container mt-contain">
-                <div className="forms-width p-3 bg-green text-dark border-radius shadow-lg">
+                <div className="forms-width p-3 bg-green text-dark border-radius shadow-lg animate__animated animate__zoomIn">
                     <div className="form-center">
                         <form onSubmit={handleSubmit}>
-                            <h1 className="text-center text-color mb-4">Delete Player</h1>
+                            <h1 className="text-center text-color mb-4 animate__animated animate__flash">Delete Player</h1>
                             <div className="input-group mb-3">
                                 <span className="input-group-text">Id: </span>
                                 <input type="text" className="form-control" name="id" id="id" onFocus={onFocus} onChange={handleChange} />
