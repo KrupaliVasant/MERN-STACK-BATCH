@@ -9,12 +9,14 @@ import PlayerUpdate from './components/PlayerUpdate';
 import PlayerDelete from './components/PlayerDelete';
 import LoginProvider from './components/Provide';
 import LogOutProvider from './components/LogoutProvider';
+// import UserNav from './components/UserNav';
 
 function RouteHandler(){
     return(
         <>
         <div className="nav-links">
             <NavBar />
+            {/* <UserNav/> */}
         </div>
 
         <Switch>

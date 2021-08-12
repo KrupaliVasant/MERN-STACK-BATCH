@@ -8,7 +8,7 @@ function App() {
       <header className="">
         <BrowserRouter>
           <RouteHandler />
-        </BrowserRouter>  
+        </BrowserRouter>
       </header>
     </div>
   );
