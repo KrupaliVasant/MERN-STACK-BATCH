@@ -1,7 +1,8 @@
 import { useLocation, useParams } from "react-router-dom";
 import LoginContext from "../Context/LoginContext";
-import Home from "./Home";
-import UserNav from "./UserNav";
+import HomeUser from "./HomeUser";
+import NavBar from "./Navbar";
+import PlayerList from "./PlayerList";
 
 const LoginProvider = (props) => {
     const params = useParams();
@@ -13,8 +14,8 @@ const LoginProvider = (props) => {
 
     return (
         <LoginContext.Provider value={user}>
-            <UserNav />
-            <Home />
+            <NavBar/>
+           <HomeUser />
         </LoginContext.Provider>
     )
 }

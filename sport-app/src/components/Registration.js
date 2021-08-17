@@ -42,9 +42,9 @@ function Registration() {
 
     return (
         <>
-            <div className="container mt-contain">
+            <div className="container-fluid mt-contain">
                 <div className="form-center">
-                    <div className="p-4 px-5 bg-green text-dark border-radius shadow-lg animate__animated animate__zoomIn">
+                    <div className="p-4 mt-3 px-5 bg-green text-dark border-radius shadow-lg animate__animated animate__zoomIn">
                         <form onSubmit={handleSubmit}>
                             <h3 className="text-color text-center mb-5 animate__animated animate__flash">SignUp Form</h3>
                             <div className="input-group mb-3">

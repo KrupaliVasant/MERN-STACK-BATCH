@@ -1,27 +1,53 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import LoginContext from "../Context/LoginContext";
+import { useDispatch, useSelector } from 'react-redux';
+import { LogIn, LogOut } from "../actions";
+import { logInUser } from "../actions/loginName";
 
 function NavBar() {
+    const ctx = React.useContext(LoginContext);
+
+    const isLoggedin = useSelector(state => state.login);
+    const loginUser = useSelector(state => state.loginUser);
+    let dispatch = useDispatch();
+
+    const history = useHistory();
+
+    const handleSubmit = () => {
+        // history.push('/home',user);
+        history.push("/logoutprovide");
+        console.log(history.location);
+        dispatch(logInUser(ctx));
+    }
+
+    // function loginBtn(){
+    //     dispatch(LogIn());
+    // }
+
+    function logoutBtn() {
+        dispatch(LogOut());
+        history.push("/logoutprovide");
+        console.log(history.location);
+    }
 
     return (
         <>
             <nav class="navbar navbar-expand-lg navbar-orange bg-orange fixed-top shadow-lg">
                 <div class="container">
                     <div class="collapse navbar-collapse">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li><NavLink className="nav-link" exact to='/' activeClassName="text-white">Home</NavLink></li>
-                            {/* <li><NavLink className="nav-link" exact to='/playerlist' activeClassName="text-white">Player List</NavLink></li>
-                            <li><NavLink className="nav-link" exact to='/playerlistbyid' activeClassName="text-white">Search</NavLink></li> */}
-                        </ul>
-
-                        <div class="text-end">
+                        <div class="text-end ms-auto">
                             <ul className="nav">
-                                {/* <li><button className="btn btn-outline-success me-2" activeClassName="btn btn-success" onClick={callLogin}>Login</button></li>
-                                <li><button className="btn btn-outline-success" activeClassName="btn btn-success" onClick={callRegister}>Registration</button></li> */}
-                                {/* <li className="me-3">Welcome {ctx}</li> */}
-                                <li><NavLink className="btn btn-outline-light me-3 hvr-float-shadow" exact to='/login' activeClassName="btn btn-light text-dark">LogIn</NavLink></li>
-                                <li><NavLink className="btn btn-outline-light me-3 hvr-float-shadow" exact to='/registration' activeClassName="btn btn-light text-dark">SignUp</NavLink></li>
+                                {isLoggedin ?
+                                    <>
+                                        <li className="me-3 mt-1">Welcome {loginUser}</li>
+                                        <button className="btn btn-success" onClick={() => { isLoggedin === false ? handleSubmit() : logoutBtn() }}>{isLoggedin === false ? "Login" : "LogOut"}</button> </>
+                                    :
+                                    <>
+                                        <li><NavLink className="btn btn-outline-light me-3 hvr-float-shadow" exact to='/login' activeClassName="btn btn-light text-dark">LogIn</NavLink></li>
+                                        <li><NavLink className="btn btn-outline-light me-3 hvr-float-shadow" exact to='/registration' activeClassName="btn btn-light text-dark">SignUp</NavLink></li>
+                                    </>
+                                }
                             </ul>
                         </div>
                     </div>

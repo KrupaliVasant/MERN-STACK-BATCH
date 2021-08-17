@@ -1,6 +1,7 @@
 import { Route, Switch } from 'react-router-dom'
 import NavBar from './components/Navbar'
 import Home from './components/Home';
+import HomeUser from './components/HomeUser';
 import Login from './components/Login';
 import Registration from './components/Registration';
 import PlayerList from './components/PlayerList';
@@ -16,19 +17,19 @@ function RouteHandler(){
         <>
         <div className="nav-links">
             <NavBar />
-            {/* <UserNav/> */}
         </div>
 
         <Switch>
             <Route path="/" exact component={Home}></Route>
+            <Route path="/homeUser" exact component={HomeUser}></Route>
             <Route path="/playerlist" exact component={PlayerList}></Route>
             <Route path="/playerlistbyid" exact component={PlayerById}></Route>
             <Route path="/login" exact component={Login}></Route>
             <Route path="/registration" exact component={Registration}></Route>
             <Route path="/playerupdate/:id" component={PlayerUpdate}></Route>
             <Route path="/playerdelete" component={PlayerDelete}></Route>
-            <Route path="/provide" component={LoginProvider}></Route>
-            <Route path="/logoutprovide" component={LogOutProvider}></Route>
+            <Route path="/provide" component={LoginProvider}></Route> 
+             <Route path="/logoutprovide" component={LogOutProvider}></Route>
         </Switch>
         </>
     )

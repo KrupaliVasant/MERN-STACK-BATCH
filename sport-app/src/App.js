@@ -5,7 +5,7 @@ import RouteHandler from './RouteHandler';
 function App() {
   return (
     <div className="App-header">
-      <header className="">
+      <header>
         <BrowserRouter>
           <RouteHandler />
         </BrowserRouter>

@@ -8,8 +8,21 @@
     flex-direction: column;
 }
 .mt-contain{
-    margin-top: 80px;
+    margin-top: 54px;
     margin-bottom: 80px;
+    height: calc(100vh - 56px);
+    position: fixed;
+}
+.scrolled{
+    height: calc(100vh - 56px);
+    overflow-x: scroll;
+    overflow-y: none;
+}
+::-webkit-scrollbar {
+    width: 2px;
+  }
+.card{
+    background-color: none !important;
 }
 .navbar-orange,
 .bg-orange{
@@ -22,7 +35,12 @@
     color: rgba(236, 232, 232, 0.678);
 }
 .navbar .nav-link:focus,
+.navbar .nav-link:hover,
 .navbar .nav-link.active{
+    color: #fff;
+}
+#sidebarMenu .nav-link:focus,
+#sidebarMenu .nav-link.active{
     color: #fff;
 }
 .bg-green{
