@@ -1,12 +1,16 @@
 var express = require('express');
 var app = express();
 
-app.use(express.static('public'));
-app.use('/images',express.static(__dirname+'/Images'));
-// http://localhost:8081/images/flower.jpg  : in browser
-
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended:false});
+
+app.use(function(req, res, next){
+    console.log(req.method);
+    next();
+});
+
+app.use(express.static('public'));
+app.use('/images',express.static(__dirname+'/Images'));
 
 // get method
 app.get('/', function (req, res) {
@@ -19,6 +23,12 @@ app.get('/abc', function (req, res) {
     res.sendFile(__dirname+"/public/index1.html");
 });
 // http://localhost:8081/abc
+
+// pattern matching  start with 's' end eith 'e' '*' all charecters with 0
+app.get('/s*e', function (req, res) {
+    res.send('Pattern matching matches');
+});  //se, s1e, sample, sfghvgbhe - success
+//Sample1 it gives error bcoz it wants last letter as 'e'
 
 app.get('/user', function (req, res) {
     myData = {
@@ -37,7 +47,15 @@ app.post('/users', urlencodedParser ,function(req,res){
     };
     console.log(responseData);
     res.end(JSON.stringify(responseData));
-});  //index_post.js rum
+});
+
+app.put('/updateuser',function(req,res){
+    res.send("Request for update");
+});
+
+app.delete('/deleteuser',function(req,res){
+    res.send("Request for delete");
+})
 
 var server = app.listen(8081, function () {
     console.log('Server started..');
@@ -47,3 +65,5 @@ var server = app.listen(8081, function () {
 // in browser 
 //localhost:8081
 // run --- node filename
+
+//  install n reserch it -- node-static

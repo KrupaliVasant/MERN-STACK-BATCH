@@ -2,8 +2,7 @@ var express = require('express');
 var app = express();
 
 app.use(express.static('public'));
-app.use('/images',express.static(__dirname+'/Images'));
-// http://localhost:8081/images/flower.jpg  : in browser
+app.use('/form',express.static(__dirname,'/Images'))
 
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended:false});
@@ -12,13 +11,11 @@ var urlencodedParser = bodyParser.urlencoded({extended:false});
 app.get('/', function (req, res) {
     res.send("Hello Every one!!!")
 });
-// http://localhost:8081/
 
 // get method
 app.get('/abc', function (req, res) {
     res.sendFile(__dirname+"/public/index1.html");
 });
-// http://localhost:8081/abc
 
 app.get('/user', function (req, res) {
     myData = {
@@ -35,9 +32,9 @@ app.post('/users', urlencodedParser ,function(req,res){
         first_name: req.body.first_name,
         last_name: req.body.last_name
     };
-    console.log(responseData);
+    console.log(response);
     res.end(JSON.stringify(responseData));
-});  //index_post.js rum
+});
 
 var server = app.listen(8081, function () {
     console.log('Server started..');
