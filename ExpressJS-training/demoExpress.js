@@ -5,6 +5,7 @@ app.use(express.static('public'));
 app.use('/images',express.static(__dirname+'/Images'));
 // http://localhost:8081/images/flower.jpg  : in browser
 
+// body-parser is for post method
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended:false});
 
@@ -20,6 +21,7 @@ app.get('/abc', function (req, res) {
 });
 // http://localhost:8081/abc
 
+// fetch 
 app.get('/user', function (req, res) {
     myData = {
         fname: req.query.first_name,
@@ -29,6 +31,7 @@ app.get('/user', function (req, res) {
     res.end(JSON.stringify(myData));
 });   //index1.js form run
 
+// create
 app.post('/users', urlencodedParser ,function(req,res){
     // Prepare output in JSON formate
     responseData = {

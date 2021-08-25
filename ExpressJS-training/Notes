@@ -17,3 +17,9 @@ var urlencodedParser = bodyParser.urlencoded({});
 
 why use express js:
 -> 
+
+// Global Objects in Node JS
+__dirname > current folder
+__filename > current file name
+setTimeout
+console.log

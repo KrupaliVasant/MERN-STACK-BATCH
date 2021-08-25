@@ -26,8 +26,12 @@
 }
 .navbar-orange,
 .bg-orange{
-    background-color: #c7493a;
+    background-color: #420516;
 }
+/* .navbar-orange,
+.bg-orange{
+    background-color: #c7493a;
+} */
 .text-oreange{
     color: #c7493a;
 }
@@ -44,17 +48,26 @@
     color: #fff;
 }
 .bg-green{
+    background-color: #B42B51;
+}
+/* .bg-green{
     background-color: #689775;
-}
+} */
 .bg-lightbrowm{
-    background-color: #907165;
+    background-color: #f1e3e73d;
 }
+/* .bg-lightbrowm{
+    background-color: #907165;
+} */
 .table-lightTrasp{
     background-color: #ffffff4d;
 }
 .text-color{
-    color: #a33327;
+    color: #fff;
 }
+/* .text-color{
+    color: #a33327;
+} */
 .form-control:focus{
     border-color: none;
     box-shadow: none !important;

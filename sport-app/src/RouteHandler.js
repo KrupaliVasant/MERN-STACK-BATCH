@@ -10,6 +10,8 @@ import PlayerUpdate from './components/PlayerUpdate';
 import PlayerDelete from './components/PlayerDelete';
 import LoginProvider from './components/Provide';
 import LogOutProvider from './components/LogoutProvider';
+import ProductGet from './components/product/productGet';
+import ProductPost from './components/product/productPost';
 // import UserNav from './components/UserNav';
 
 function RouteHandler(){
@@ -30,6 +32,8 @@ function RouteHandler(){
             <Route path="/playerdelete" component={PlayerDelete}></Route>
             <Route path="/provide" component={LoginProvider}></Route> 
              <Route path="/logoutprovide" component={LogOutProvider}></Route>
+             <Route path="/productget" component={ProductGet}></Route>
+             <Route path="/productpost" component={ProductPost}></Route>
         </Switch>
         </>
     )

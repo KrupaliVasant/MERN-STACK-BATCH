@@ -55,9 +55,17 @@ function Registration() {
                                 <label htmlFor="user-name" className="input-group-text">User Name:</label>
                                 <input type="text" className="form-control" name="user-name" id="user-name" onChange={handleChange} />
                             </div>
-                            <div className="input-group mb-5">
+                            <div className="input-group mb-3">
                                 <label htmlFor="email" className="input-group-text">Email:</label>
                                 <input type="email" className="form-control" name="email" id="email" onChange={handleChange} />
+                            </div>
+                            <div className="input-group mb-3">
+                                <label htmlFor="password" className="input-group-text">Password:</label>
+                                <input type="password" className="form-control" name="password" id="password" onChange={handleChange} />
+                            </div>
+                            <div className="input-group mb-5">
+                                <label htmlFor="cpassword" className="input-group-text">Confirm Password:</label>
+                                <input type="password" className="form-control" name="cpassword" id="cpassword" onChange={handleChange} />
                             </div>
                             <div className="d-grid gap-2 text-center">
                                 <button type="submit" className="btn btn-success hvr-float-shadow">Register</button>
