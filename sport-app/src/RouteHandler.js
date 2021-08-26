@@ -12,6 +12,7 @@ import LoginProvider from './components/Provide';
 import LogOutProvider from './components/LogoutProvider';
 import ProductGet from './components/product/productGet';
 import ProductPost from './components/product/productPost';
+import UserList from './components/UserList';
 // import UserNav from './components/UserNav';
 
 function RouteHandler(){
@@ -25,6 +26,7 @@ function RouteHandler(){
             <Route path="/" exact component={Home}></Route>
             <Route path="/homeUser" exact component={HomeUser}></Route>
             <Route path="/playerlist" exact component={PlayerList}></Route>
+            <Route path="/userlist" exact component={UserList}></Route>
             <Route path="/playerlistbyid" exact component={PlayerById}></Route>
             <Route path="/login" exact component={Login}></Route>
             <Route path="/registration" exact component={Registration}></Route>

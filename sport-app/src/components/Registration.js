@@ -32,12 +32,12 @@ function Registration() {
             userName,
             email
         };
-        axios.post(`https://jsonplaceholder.typicode.com/users`, user, { headers: headers })
+        axios.post(`http://localhost:7000/userdata/user`, user, { headers: headers })
             .then((res) => {
                 console.log(res);
                 alert(`Add player successfully 
             Name:${user.name}, User Name:${user.userName}, Email: ${user.email}`);
-            })
+            });
     }
 
     return (

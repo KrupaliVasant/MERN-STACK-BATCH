@@ -33,10 +33,10 @@ function NavBar() {
 
     return (
         <>
-            <nav class="navbar navbar-expand-lg navbar-orange bg-orange fixed-top shadow-lg">
-                <div class="container">
-                    <div class="collapse navbar-collapse">
-                        <div class="text-end ms-auto">
+            <nav className="navbar navbar-expand-lg navbar-orange bg-orange fixed-top shadow-lg">
+                <div className="container">
+                    <div className="collapse navbar-collapse">
+                        <div className="text-end ms-auto">
                             <ul className="nav">
                                 {isLoggedin ?
                                     <>
